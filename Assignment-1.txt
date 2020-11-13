@@ -1,0 +1,139 @@
+#EVA5-Phase1, Assignment 1
+#kamlesh.sharma140394@gmail.com
+
+Q1. What are Channels and Kernels (according to EVA)?
+Ans: 
+Channels are containers/collection of a feature or specific information from the image. For eg, Take an example of an omelet(image) the ingredients like onion, turmeric, salt, chilies, and eggs are channels that hold each ingredient respectively.
+Kernels are feature extractors that help in detecting specific information from an image, like selecting only a horizontal edge. also, the most preferred extractors are 3X3.
+
+Q2. Why should we (nearly) always use 3x3 kernels?
+Ans: 
+3X3 kernels are better at extracting as they have a center axis and can cover the angles easily providing more freedom of angle compared to a 2X2. and avoid the loss of center axis in a 4X4
+Also, while creating layers, 3X3 is proven to effectively take less number of parameters.
+
+Q3.How many times do we need to perform 3x3 convolutions operations to reach close to 1x1 from 199x199 (type each layer output like 199x199 > 197x197...)
+99 times!
+199X199 0
+197X197 1
+195X195 2
+193X193 3
+191X191 4
+189X189 5
+187X187 6
+185X185 7
+183X183 8
+181X181 9
+179X179 10
+177X177 11
+175X175 12
+173X173 13
+171X171 14
+169X169 15
+167X167 16
+165X165 17
+163X163 18
+161X161 19
+159X159 20
+157X157 21
+155X155 22
+153X153 23
+151X151 24
+149X149 25
+147X147 26
+145X145 27
+143X143 28
+141X141 29
+139X139 30
+137X137 31
+135X135 32
+133X133 33
+131X131 34
+129X129 35
+127X127 36
+125X125 37
+123X123 38
+121X121 39
+119X119 40
+117X117 41
+115X115 42
+113X113 43
+111X111 44
+109X109 45
+107X107 46
+105X105 47
+103X103 48
+101X101 49
+99X99 50
+97X97 51
+95X95 52
+93X93 53
+91X91 54
+89X89 55
+87X87 56
+85X85 57
+83X83 58
+81X81 59
+79X79 60
+77X77 61
+75X75 62
+73X73 63
+71X71 64
+69X69 65
+67X67 66
+65X65 67
+63X63 68
+61X61 69
+59X59 70
+57X57 71
+55X55 72
+53X53 73
+51X51 74
+49X49 75
+47X47 76
+45X45 77
+43X43 78
+41X41 79
+39X39 80
+37X37 81
+35X35 82
+33X33 83
+31X31 84
+29X29 85
+27X27 86
+25X25 87
+23X23 88
+21X21 89
+19X19 90
+17X17 91
+15X15 92
+13X13 93
+11X11 94
+9X9 95
+7X7 96
+5X5 97
+3X3 98
+1X1 99
+
+Q4: How are kernels initialized?
+Ans:
+	Kernels are initialized with all random variables. This is because let considers if they were to initialize at zero or one or a fixed origin, the parameters of the kernel needed to move to the endpoint and travel from this constant origin. Due to which the amount of movement also called Entropy is going to be huge when the endpoint is higher and would require much more computing or processing. 
+	But, let's assume if the parameters of a kernel are to be initialized randomly then the distance between the origin and endpoint will be very low/reduced and feature extraction will be faster comparatively. 
+Also, Entropy is a measure of randomness, so if the value of Entropy is higher, it is harder to get a conclusion out of information.
+
+Q5. What happens during the training of a DNN?
+Ans: 
+    DNN stands for Deep Neural network, and it helps in recognizing specific information from an image and tell us what image it is related to. For example: Let's take the automatic creation of face albums in our phones, DNN behind the algorithm easily helps us find pictures of specific people just by clicking on their faces. To train the phone software behind this the following process takes place in at least 4 blocks:
+        Block 1: Edges/gradients
+    Images are taken as input layer only looks up for edges and gradients and stores them into feature channels respectively, where each feature is extracted by a particular kernel. from the example above, like the left vertical edge of the face, or the horizontal line of the forehead.	
+    
+        Block 2: Texture and Patterns
+    Here, we try to find a similar group of edges and gradients with form the patterns or textures.
+    
+        Block 3: Parts of the object
+    Here the machine learns to identify the parts of the images which are grouped together like for a face it would be a nose, an ear, the eyes, and so on. 
+    
+        Block 4: The Object
+    This block itself shows now the individual faces of people in the photos and helps us identify the person.
+    
+    And to all these blocks we add a convolution layer to extract those features at every stage.
+    
