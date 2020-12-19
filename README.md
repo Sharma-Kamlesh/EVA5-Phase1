@@ -8,13 +8,13 @@ I have incorporated the intuition of progressive channels expansion.
 4.  We read the model summary to calculate the number of parameters the model consists and work towards having <20000.
 5.  Create a train set and test set, and download the MNIST data to each of them. Also, we assigne the batch size to 64 as studies indicate batch sizes should be between 8 and 128.
 6.  We create the train and test functions:
-  i.  Train function 
+  -  Train function 
     1.  takes the data in batches as defined.
     2.  optimizer is set to zero so to zero the delta it has from previous iteration
     3.  we caluculate the train loss using nll - likelihood loss
     4.  Do a backward propogation
     5.  modify the optimizer 
-  ii.  Test function this gives us total test loss and accuracy 
+  -  Test function this gives us total test loss and accuracy 
  
  7. Used a SGD optimizer and for 20 iterations called the functions train and test. 
 
