@@ -23,3 +23,14 @@ Step 2: [Code 2](https://github.com/Sharma-Kamlesh/EVA5-Phase1/blob/main/S5%20As
   3.  Analysis:
         - The Train Accuracy has increased consistently.
         - But we start getting overfitting after Epoch 6 
+
+Step 3: [Code 3](https://github.com/Sharma-Kamlesh/EVA5-Phase1/blob/main/S5%20Assignment/S5_Code_3.ipynb)
+  1.  Target:
+        - add dropout with Normalization to avoid the overfitting and Add rotation transform
+  2.  Results:
+        - Parameters: 6,770 ( changed the model output and input channels)
+        - Best Train Accuracy: 99.24
+        - Best Test Accuracy: 99.35
+  3.  Analysis:
+        - Droput was making the model inconsistent and reducing the accuracy 
+        - With removal of dropout the model increase the accuracy of the model and achieved 99.35 on 15th Epoch. 
